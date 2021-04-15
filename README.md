@@ -33,5 +33,16 @@ The LetsEncrypt client will sign the requests, go through the verification and f
 
 Just watch the logs to see when the process has finished. `cf logs letsencrypt`
 
+PERCY NOTES:
+ibmcloud cf ssh letsencrypt  -c "cat app/conf/live/web.postea.io/cert.pem" > cert.pem
+ibmcloud cf ssh letsencrypt  -c "cat app/conf/live/web.postea.io/chain.pem" > chain.pem
+ibmcloud cf ssh letsencrypt  -c "cat app/conf/live/web.postea.io/fullchain.pem" > fullchain.pem
+ibmcloud cf ssh letsencrypt  -c "cat app/conf/live/web.postea.io/privkey.pem" > privkey.pem
+
+ibmcloud cf ssh letsencrypt  -c "cat app/conf/live/postea.io/cert.pem" > cert.pem
+ibmcloud cf ssh letsencrypt  -c "cat app/conf/live/postea.io/chain.pem" > chain.pem
+ibmcloud cf ssh letsencrypt  -c "cat app/conf/live/postea.io/fullchain.pem" > fullchain.pem
+ibmcloud cf ssh letsencrypt  -c "cat app/conf/live/postea.io/privkey.pem" > privkey.pem
+
 While you could leave the app running, it probably makes sense to stop it when you don't need it, and just start it up when you need to renew certificates or add another host/domain.
 By default it will keep running for 1 week, then kill itself.  DEA will then try to restart it for you...
