@@ -11,16 +11,16 @@ print(settings)
 appname = manifest['applications'][0]['name']
 
 # Push the app, but don't start it yet
-call(["cf", "push", "--no-start"])
+call(["ibmcloud", "app", "push", "--no-start"])
 
 # For each domain, map a route for the specific letsencrypt check path '/.well-known/acme-challenge/'
 for entry in settings['domains']:
     domain = entry['domain']
     for host in entry['hosts']:
         if host == '.':
-            call(["cf", "map-route", appname, domain, "--path", "/.well-known/acme-challenge/"])
+            call(["ibmcloud","cf", "map-route", appname, domain, "--path", "/.well-known/acme-challenge/"])
         else:
-            call(["cf", "map-route", appname, domain, "--hostname", host, "--path", "/.well-known/acme-challenge/"])
+            call(["ibmcloud","cf", "map-route", appname, domain, "--hostname", host, "--path", "/.well-known/acme-challenge/"])
 
 # Now the app can be started
-call(["cf", "start", appname])
+call(["ibmcloud","cf", "start", appname])

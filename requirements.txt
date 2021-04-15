@@ -2,3 +2,4 @@ cffi >= 0.8.0
 letsencrypt >= 0.7.0
 six>=1.7
 pyyaml>=3.11
+simple-http-server>=0.6.0

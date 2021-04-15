@@ -1,22 +1,25 @@
 {
-  "email": "ben@example.com",
+  "email": "hola@postea.io",
   "staging": false,
   "domains": [
     {
-      "domain": "example.com",
+      "domain": "postea.io",
       "hosts": [
-        ".",
-        "auth",
-        "test",
-        "www"
-      ]
-    },
-    {
-      "domain": "example2.com",
-      "hosts": [
-        "abc",
-        "test"
+        "."
       ]
     }
   ]
 }
+# {
+#   "email": "hola@postea.io",
+#   "staging": false,
+#   "domains": [
+#     {
+#       "domain": "postea.io",
+#       "hosts": [
+#         ".",
+#         "web"
+#       ]
+#     }
+#   ]
+# }
